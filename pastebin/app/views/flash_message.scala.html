@@ -1,0 +1,6 @@
+@()(implicit request: MessagesRequestHeader)
+@if(request.flash.get("message").isDefined){
+<div class="alert alert-success" >
+        @request.flash.get("message")
+</div>
+}

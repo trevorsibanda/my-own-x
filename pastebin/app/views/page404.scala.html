@@ -1,0 +1,19 @@
+@import scala._ 
+@(msg: String)
+
+@main(s"404 Not Found - Pasty : $msg") {
+  <div class="row" >
+    <div class="col-md-9" >
+        <div class="card text-center"  >
+            <img src="@routes.Assets.versioned("img/flags/zw.svg")" class="img" />
+            <h1>Error 404</h1>
+            <h4>Page not Found </h4>
+        </div>
+    </div>
+    <div class="col-md-3" >
+      @recent_pastes()
+    </div>
+  </div>
+  
+}
+

@@ -1,0 +1,31 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+
+############################# API v1 ##########################################
+
+# Static endpoints
+GET      /about			controllers.PageController.about()
+GET	 /api			controllers.PageController.api() 
+GET      /   			controllers.PageController.index()
+
+
+# Content endpoints
+GET      /_/search          controllers.ContentController.search()
+GET      /_/random          controllers.ContentController.random()            
+POST	 /_/add			controllers.ContentController.create()
+GET 	 /_/:paste_id/delete		controllers.ContentController.delete(paste_id)
+GET 	 /_/:paste_id		controllers.ContentController.view(paste_id)
+GET      /install       controllers.ContentController.install()
+
+# API Endpoints
+GET 	/api/v1/_/:paste_id	controllers.api.v1.ContentController.view(paste_id)
+POST	/api/v1/_/add		controllers.api.v1.ContentController.create()
+DELETE  /api/v1/_/:paste_id	controllers.api.v1.ContentController.delete(paste_id)
+
+######################################################################################
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

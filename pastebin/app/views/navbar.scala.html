@@ -1,0 +1,45 @@
+@()
+    <div class="header py-4">
+        <div class="container">
+          <div class="d-flex">
+            <a class="header-brand" href="/">
+              Pasty
+            </a>
+            <div class="d-flex order-lg-2 ml-auto">
+              <div class="nav-item d-none d-md-flex">
+                <a href="https://github.com/trevorsibanda/my-own-x" class="btn btn-sm btn-outline-primary" target="_blank">Fork on Github</a>
+              </div>
+            </div>
+            <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+              <span class="header-toggler-icon"></span>
+            </a>
+          </div>
+        </div>
+    </div>
+    <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+    <div class="container">
+        <div class="row align-items-center">
+        <div class="col-lg-3 ml-auto">
+            
+            <form name="search_form" method="GET" action="/_/search" class="input-icon my-3 my-lg-0">
+                <input type="search" name="query" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+                <div class="input-icon-addon">
+                    <i class="fe fe-search"></i>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg order-lg-first">
+            <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+            <li class="nav-item">
+                <a href="/" class="nav-link"><i class="fe fe-edit"></i> Create Paste</a>
+            </li>
+            <li class="nav-item">
+                <a href="/_/random" class="nav-link" ><i class="fe fe-box"></i> Random Paste</a>
+            </li>
+            
+            </ul>
+            
+        </div>
+        </div>
+    </div>
+    </div>

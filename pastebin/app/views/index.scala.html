@@ -1,0 +1,15 @@
+@()(implicit request: MessagesRequestHeader)
+
+@main("Pasty - A simple modern pastebin in Scala :)") {
+  <div class="row" >
+    <div class="col-md-9" >
+        @editor(None, PasteAccess.`public`(java.util.UUID.randomUUID))(request)
+    </div>
+    <div class="col-md-3" >
+      @flash_message()(request)
+      @recent_pastes()
+    </div>
+  </div>
+  
+}
+

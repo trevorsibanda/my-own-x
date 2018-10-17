@@ -1,0 +1,82 @@
+@import helper._
+
+@(paste: Option[Paste], access: PasteAccess)(implicit request: MessagesRequestHeader)
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">@if(paste == None){ Create new Paste }else{ @paste.get.name }</h3>
+            @form(action=routes.ContentController.create()){
+              @CSRF.formField
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="form-label"><i style="color: red;">*</i> Paste Name</label>
+                  <input type="text" class="form-control" name="title" @if(paste != None){ disabled="1" value="@paste.get.name" } placeholder="Something short and sassy ;)" >
+                </div>
+              </div>
+              <div class="col-md-12">
+                    <div class="form-group mb-0">
+                      <label class="form-label">Paste content</label>
+                      <textarea rows="20" name="content" style="min-height: 45vh;" @if(paste != None){ disabled="1"} class="form-control" placeholder="You can type up to 1MB of text :)" >@if(paste != None){ @paste.get.content }</textarea>
+                    </div>
+              </div>
+              @if(paste != None){
+                <div class="col-sm-6 col-md-4">
+                    <label class="form-label" >Date Created</label>
+                    <div class="row gutters-xs">
+                    <div class="col-12">
+                        <input type="text" disabled="1" class="form-control" placeholder="Date created" value="@paste.get.date_created" />
+                    </div>
+                </div>
+              </div>
+              }
+              <div class="col-sm-6 col-md-4">
+                    <label class="form-label" >Visibility</label>
+                    <div class="row gutters-xs">
+                    <div class="col-12">
+                        <select name="visibility" @if(paste != None){ disabled="1" value="@access.visibility" } class="form-control custom-select">
+                            <option value="private" @if(access.visibility ==Visibility.Private()){ selected } >Private</option>
+                            <option value="public" @if(access.visibility ==Visibility.Public()){ selected }>Public</option>
+                                
+                        </select>
+                    </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                    <label class="form-label" >Expires after</label>
+                    <div class="row gutters-xs">
+                    <div class="col-12">
+                        <select name="lifetime" @if(paste != None){ disabled="1" value="@access.lifetime" } class="form-control custom-select">
+                            @for( day <- Seq(3,7,14,30,90,120)){
+                              <option @if(day == access.lifetime.days){ selected } value="@day">@day days</option>
+                            }
+                            <option value="-1">Forever</option>
+                                
+                        </select>
+                    </div>
+                </div>
+              </div>
+              @if(paste == None){
+                <div class="card-footer text-right">
+                  <button type="submit" class="btn btn-primary">Paste It!</button>
+                </div>
+              }
+            }
+              
+              @if(paste != None){
+                <div class="col-sm-6 col-md-4">
+                    <label class="form-label" >Delete Paste</label>
+                    <div class="row gutters-xs">
+                    <div class="col-12">
+                        <form action="/_/@paste.get.id/delete" name="delete_form"   method="get" >
+                          <input type="text" class="form-control" placeholder="Enter deletion key here" name="deletion_key" />
+                          <button class="btn btn-block btn-outline-danger" type="submit" ><i class="fe fe-lock"></i> Delete Paste</button>
+                        </form>
+                    </div>
+                </div>
+              </div>
+            }
+              
+            </div>
+          </div>
+          
+        </div>

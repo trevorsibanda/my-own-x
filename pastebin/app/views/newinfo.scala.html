@@ -1,0 +1,33 @@
+@(access: PasteAccess)
+
+<div class="alert card alert-primary" >
+    <div class="row " >
+        <div class="col-md-12" >
+            <label>Access URL</label>
+            <div class="input-group" >
+                <span class="btn input-group-addon" >
+                    <i class="fe fe-link" ></i>
+                </span>
+                <input type="url" disabled value="/_/@access.paste_id" class="form-control" />
+            </div>
+            <small>Share the link with people you wish to access this paste. 
+                @if(access.visibility == Visibility.Private){
+                    <strong>Please note this is a private paste and will only be accessible to people with this link</strong>
+                }
+            </small>
+        </div>
+        <div class="col-md-12" >
+                <label>Deletion Key</label>
+                <div class="input-group" >
+                    <span class="btn input-group-addon" >
+                        <i class="fe fe-lock" ></i>
+                    </span>
+                    <input type="text" disabled="1" value="@access.deletion_key" class="form-control" />
+                    
+                </div>
+                <div class="alert alert-danger" >
+                        <small>Store this key and use it to delete this paste.<br/>You will only be shown this key once.</small>
+                </div>
+            </div>
+    </div>
+</div>

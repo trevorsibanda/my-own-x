@@ -1,0 +1,21 @@
+@(paste: Option[Paste], access: PasteAccess, show_info: Boolean = false)(implicit request: MessagesRequestHeader)
+@main("") {
+<div class="row" >
+    <div class="col-md-9" >
+        @if(paste == None){
+            <h1>Something went wrong.</h1>
+            <h4>The paste you are looking for, exists but also doesn't exist</h4>
+        } else{
+            
+            @editor(paste, access)(request)
+        }
+    </div>
+    <div class="col-md-3" >
+        @if(show_info){
+            @newinfo(access)
+        }
+        @recent_pastes()
+    </div>
+</div>
+
+}
