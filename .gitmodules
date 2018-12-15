@@ -1,0 +1,3 @@
+[submodule "pastebin"]
+	path = pastebin
+	url = git@github.com:trevorsibanda/pastebin.git
