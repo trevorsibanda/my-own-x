@@ -24,6 +24,15 @@ Goose game is a game where two or more players move pieces around a track by rol
 |  DONE  |  [Goose.md](specs/goose.md) | NO | NO | MULTIPLE | [goose_game](goose_game) | SCALA |
 
 *****
+####  Json validator
+
+![Json validator implementation screenshot](screenshots/json_validator.png)
+
+A simple REST service in Scala for validating JSON documents against JSON schema
+
+| Status |  Specification | Code Documented |  Unit Test | Known Issues | Link | Solution |
+|--------|--------|--------|--------|--------|--------|--------|
+|  DONE  |  [JsonValidator.md](specs/json-validator.md) | NO | NO | NO | [json-validator](json-validator) | SCALA, Play Framework!, SLICK |
 
 ####  Mailinator
 ![Mailinator implementation screenshot](screenshots/mailinator.gif)
@@ -45,6 +54,8 @@ A pastebin or text storage site is a type of online content hosting service wher
 | Status |  Specification | Code Documented |  Unit Test | Known Issues | Link | Solution |
 |--------|--------|--------|--------|--------|--------|--------|
 |  DONE  |  [Pastebin.md](specs/pastebin.md) | NO | NO | MULTIPLE | [pastebin](pastebin) | SCALA, Play framework!, SLICK, ElasticSearch, sbt |
+
+
 
 
 *****

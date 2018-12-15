@@ -7,3 +7,6 @@
 [submodule "goose_game"]
 	path = goose_game
 	url = git@github.com:trevorsibanda/goose_game
+[submodule "json-validator"]
+	path = json-validator
+	url = git@github.com:trevorsibanda/json-validator
