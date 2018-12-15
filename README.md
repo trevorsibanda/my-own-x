@@ -1,6 +1,5 @@
 # My own X
 
-* * *
 
 ## Motivation
 
@@ -21,7 +20,7 @@ The implementation of some of these solutions might not be prestine, I built the
 Goose game is a game where two or more players move pieces around a track by rolling a die. The aim of the game is to reach square number sixty-three before any of the other players and avoid obstacles. ([wikipedia](https://en.wikipedia.org/wiki/Game_of_the_Goose))
 
 | Status |  Specification | Code Documented |  Unit Test | Known Issues | Link | Solution |
-|--------|--------|
+|--------|--------|--------|--------|--------|--------|--------|
 |  DONE  |  [Goose.md](specs/goose.md) | NO | NO | MULTIPLE | [goose_game](goose_game) | SCALA |
 
 *****
@@ -32,7 +31,7 @@ Goose game is a game where two or more players move pieces around a track by rol
 Mailinator is a web service for checking email sent to public, temporary email addresses. There are many similar services, but Mailinator was one of the first.
 
 | Status |  Specification | Code Documented |  Unit Test | Known Issues | Link | Solution |
-|--------|--------|
+|--------|--------|--------|--------|--------|--------|--------|
 |  DONE  | [Mailinator.md](specs/mailinator.md) | NO | INCOMPLETE | MULTIPLE | [mailinator](mailinator) | SCALA, http4s |
 
 *****
@@ -44,7 +43,7 @@ Mailinator is a web service for checking email sent to public, temporary email a
 A pastebin or text storage site is a type of online content hosting service where users can store plain text, e.g. to source code snippets for code review via Internet.
 
 | Status |  Specification | Code Documented |  Unit Test | Known Issues | Link | Solution |
-|--------|--------|
+|--------|--------|--------|--------|--------|--------|--------|
 |  DONE  |  [Pastebin.md](specs/pastebin.md) | NO | NO | MULTIPLE | [pastebin](pastebin) | SCALA, Play framework!, SLICK, ElasticSearch, sbt |
 
 
