@@ -1,5 +1,5 @@
 # My own X
-
+![cool bg](feynman.png)
 
 ## Motivation
 
