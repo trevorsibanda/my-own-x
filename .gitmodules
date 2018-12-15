@@ -1,3 +1,9 @@
 [submodule "pastebin"]
 	path = pastebin
 	url = git@github.com:trevorsibanda/pastebin.git
+[submodule "mailinator"]
+	path = mailinator
+	url = git@github.com:trevorsibanda/mailinator
+[submodule "goose_game"]
+	path = goose_game
+	url = git@github.com:trevorsibanda/goose_game
